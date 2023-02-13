@@ -1,0 +1,120 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(
+        140deg,
+        #a3fff1,
+        #FFCCAC,
+        #f9edb7,
+        #75f0de 
+    );
+}
+
+.container {
+    height: 100px;
+    width: 40%;
+    min-width: 250px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: #fff;
+    border: 2px solid  #72867e;
+    border-radius: 20px;
+
+    .search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px;
+    
+            .searchField {
+                font-family: 'Cabin', sans-serif;
+                font-size: 20px;
+                color:  #72867e;
+                outline: none;
+                border: none;
+                margin: 0 10px;
+                padding: 5px 8px;
+                border-radius: 10px;
+    
+                &:focus {
+                    box-shadow: 0 0 10px #72867e;
+                }
+                
+            }
+    
+            .material-symbols-outlined {
+                color:  #72867e;
+                font-size: 25px;
+                
+    
+                &:last-child {
+                    background-color:  #dde1df;
+                    border-radius: 50%;
+                    padding: 5px;
+                }
+    
+    
+                &:last-child:hover {
+                    color: #232725;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+
+
+    .modal {
+        display: none;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        height: 90%;
+        background-color: #f9edb7;
+        border-radius: 10px;
+        padding: 8px;
+        border: 1px solid #72867e;;
+
+        .material-symbols-outlined {
+            display: block;
+            text-align: end;
+            color: #72867e;
+            font-size: 15px;
+            cursor: pointer;
+
+            &:hover {
+                color: #232725;
+            }
+        }
+
+        .errorMessage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+
+            p {
+                font-family: 'Cabin', sans-serif;
+                font-size: 20px;
+                color:  #72867e;
+            }
+        }
+    }
+}
+
