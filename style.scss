@@ -28,26 +28,34 @@ body {
     background-color: #fff;
     border: 2px solid  #72867e;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    transition: height 2s ease;
+    padding: 10px 20px;
 
     .search {
+        width: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-bottom: 20px;
 
         form {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 30px;
+            margin: 30px 10px;
     
             .searchField {
+               
                 font-family: 'Cabin', sans-serif;
-                font-size: 20px;
+                font-size: 30px;
                 color:  #72867e;
                 outline: none;
                 border: none;
                 margin: 0 10px;
-                padding: 5px 8px;
                 border-radius: 10px;
     
                 &:focus {
@@ -58,7 +66,7 @@ body {
     
             .material-symbols-outlined {
                 color:  #72867e;
-                font-size: 25px;
+                font-size: 30px;
                 
     
                 &:last-child {
@@ -77,6 +85,31 @@ body {
     }
 
 
+    .weather {
+        width: 80%;
+        display: none;
+        flex-direction: column;
+
+        .current_weather {
+            margin-bottom: 20px;
+        }
+
+        .current_indicators {
+            display: grid;
+            grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+            
+
+
+
+            .indicator {
+                display: flex;
+                align-items: center;
+
+
+            }
+        }
+    }
+
 
     .modal {
         display: none;
@@ -89,7 +122,7 @@ body {
         background-color: #f9edb7;
         border-radius: 10px;
         padding: 8px;
-        border: 1px solid #72867e;;
+        border: 1px solid #72867e;
 
         .material-symbols-outlined {
             display: block;

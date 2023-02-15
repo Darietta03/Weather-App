@@ -22,26 +22,33 @@ body {
   background-color: #fff;
   border: 2px solid #72867e;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  transition: height 2s ease;
+  padding: 10px 20px;
 }
 .container .search {
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 .container .search form {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 30px;
+  margin: 30px 10px;
 }
 .container .search form .searchField {
   font-family: "Cabin", sans-serif;
-  font-size: 20px;
+  font-size: 30px;
   color: #72867e;
   outline: none;
   border: none;
   margin: 0 10px;
-  padding: 5px 8px;
   border-radius: 10px;
 }
 .container .search form .searchField:focus {
@@ -49,7 +56,7 @@ body {
 }
 .container .search form .material-symbols-outlined {
   color: #72867e;
-  font-size: 25px;
+  font-size: 30px;
 }
 .container .search form .material-symbols-outlined:last-child {
   background-color: #dde1df;
@@ -59,6 +66,22 @@ body {
 .container .search form .material-symbols-outlined:last-child:hover {
   color: #232725;
   cursor: pointer;
+}
+.container .weather {
+  width: 80%;
+  display: none;
+  flex-direction: column;
+}
+.container .weather .current_weather {
+  margin-bottom: 20px;
+}
+.container .weather .current_indicators {
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+}
+.container .weather .current_indicators .indicator {
+  display: flex;
+  align-items: center;
 }
 .container .modal {
   display: none;
