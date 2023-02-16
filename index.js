@@ -5,6 +5,7 @@ let search =document.querySelector('.search');
 let close = document.querySelector('.closeBtn');
 let container = document.querySelector('.container');
 let weather = document.querySelector('.weather');
+let chosenTown = document.querySelector('.chosen-city')
 
 
 
@@ -14,11 +15,15 @@ btn.addEventListener('click', () => {
     search.style.display = 'none';
 
  } else {
+    chosenTown.textContent = city.value;
+
     container.style.height = '600px';
     weather.style.display = 'flex';
 
 
  }
+
+ city.value = "";
 })
 
 close.addEventListener('click', () => {

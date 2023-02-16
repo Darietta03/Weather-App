@@ -13,7 +13,7 @@ body {
 
 .container {
   height: 100px;
-  width: 40%;
+  width: 30%;
   min-width: 250px;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -27,14 +27,13 @@ body {
   justify-content: start;
   align-items: center;
   transition: height 2s ease;
-  padding: 10px 20px;
+  padding: 0px 30px;
 }
 .container .search {
   width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
 }
 .container .search form {
   display: flex;
@@ -44,12 +43,13 @@ body {
 }
 .container .search form .searchField {
   font-family: "Cabin", sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   color: #72867e;
   outline: none;
   border: none;
   margin: 0 10px;
   border-radius: 10px;
+  padding: 5px;
 }
 .container .search form .searchField:focus {
   box-shadow: 0 0 10px #72867e;
@@ -64,24 +64,46 @@ body {
   padding: 5px;
 }
 .container .search form .material-symbols-outlined:last-child:hover {
-  color: #232725;
+  color: #106753;
   cursor: pointer;
 }
 .container .weather {
-  width: 80%;
+  width: 100%;
   display: none;
   flex-direction: column;
+}
+.container .weather .chosen-city {
+  text-align: center;
+  font-family: "Cabin", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #106753;
 }
 .container .weather .current_weather {
   margin-bottom: 20px;
 }
 .container .weather .current_indicators {
   display: grid;
-  grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+  grid-template: repeat(2, auto)/repeat(2, auto);
+  justify-content: space-between;
+  row-gap: 20px;
 }
 .container .weather .current_indicators .indicator {
   display: flex;
   align-items: center;
+  font-family: "Cabin", sans-serif;
+  font-size: 20px;
+  color: #106753;
+}
+.container .weather .current_indicators .indicator .param {
+  font-weight: 700;
+}
+.container .weather .current_indicators .indicator p {
+  font-size: 15px;
+}
+.container .weather .current_indicators .indicator .material-symbols-outlined {
+  font-size: 30px;
+  margin-right: 5px;
 }
 .container .modal {
   display: none;

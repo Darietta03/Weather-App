@@ -19,7 +19,7 @@ body {
 
 .container {
     height: 100px;
-    width: 40%;
+    width: 30%;
     min-width: 250px;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -33,14 +33,13 @@ body {
     justify-content: start;
     align-items: center;
     transition: height 2s ease;
-    padding: 10px 20px;
+    padding: 0px 30px;
 
     .search {
         width: 80%;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
 
         form {
             display: flex;
@@ -49,14 +48,14 @@ body {
             margin: 30px 10px;
     
             .searchField {
-               
                 font-family: 'Cabin', sans-serif;
-                font-size: 30px;
+                font-size: 25px;
                 color:  #72867e;
                 outline: none;
                 border: none;
                 margin: 0 10px;
                 border-radius: 10px;
+                padding: 5px;
     
                 &:focus {
                     box-shadow: 0 0 10px #72867e;
@@ -77,18 +76,25 @@ body {
     
     
                 &:last-child:hover {
-                    color: #232725;
+                    color:  #106753;
                     cursor: pointer;
                 }
             }
         }
     }
 
-
     .weather {
-        width: 80%;
+        width: 100%;
         display: none;
         flex-direction: column;
+
+        .chosen-city {
+            text-align: center;
+            font-family: 'Cabin', sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color:  #106753;
+        }
 
         .current_weather {
             margin-bottom: 20px;
@@ -96,16 +102,29 @@ body {
 
         .current_indicators {
             display: grid;
-            grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+            grid-template: repeat(2, auto)/repeat(2, auto);
+            justify-content: space-between;
+            row-gap: 20px;
             
-
-
-
             .indicator {
                 display: flex;
                 align-items: center;
+                font-family: 'Cabin', sans-serif;
+                font-size: 20px;
+                color:  #106753;
 
+                .param {
+                    font-weight: 700;
+                }
 
+                p {
+                    font-size: 15px;
+                }
+
+                .material-symbols-outlined {
+                    font-size: 30px;
+                    margin-right: 5px;
+                }
             }
         }
     }
