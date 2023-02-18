@@ -83,24 +83,92 @@ body {
         }
     }
 
+
+    .not-found {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 250%;
+        width: 102%;
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%); 
+        z-index: 99; 
+        background-color: #fff;
+        border-radius: 20px;
+        padding: 5px;
+    
+        .modal-item{
+            display: flex;
+            justify-content: end; 
+    
+            .material-symbols-outlined {
+                text-align: center;
+                color: #72867e;
+                font-size: 20px;
+                cursor: pointer;
+                margin-right: 0;
+                margin-left: auto;
+                
+    
+                &:hover {
+                    color: #232725;
+                }
+            }
+        }
+
+            .modal-img {
+                
+
+                img {
+                    width: 30px;
+                    height: 30px; 
+                }
+            }
+
+
+        }
+        
+        p {
+            text-align: center;
+            font-family: 'Cabin', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color:  #106753;
+        }
+    }
+
+
+
     .weather {
         width: 100%;
-        display: none;
+        height: 100%;
+        display: flex;
         flex-direction: column;
+        position: relative;
+        opacity: 0;
+        visibility: hidden;
 
         .chosen-city {
+            display: block;
             text-align: center;
             font-family: 'Cabin', sans-serif;
             font-size: 40px;
             font-weight: 700;
             color:  #106753;
+            text-transform: capitalize;
         }
 
         .current_weather {
             margin-bottom: 20px;
         }
 
+
+
         .current_indicators {
+            margin-top: 20px;
             display: grid;
             grid-template: repeat(2, auto)/repeat(2, auto);
             justify-content: space-between;
@@ -143,15 +211,20 @@ body {
         padding: 8px;
         border: 1px solid #72867e;
 
-        .material-symbols-outlined {
-            display: block;
-            text-align: end;
-            color: #72867e;
-            font-size: 15px;
-            cursor: pointer;
+        .modal-item{
+            display: flex;
+            justify-content: end;
 
-            &:hover {
-                color: #232725;
+            .material-symbols-outlined {
+                color: #72867e;
+                font-size: 15px;
+                cursor: pointer;
+                margin-right: 0;
+                margin-left: auto;
+    
+                &:hover {
+                    color: #232725;
+                }
             }
         }
 
@@ -169,4 +242,6 @@ body {
         }
     }
 }
+
+
 

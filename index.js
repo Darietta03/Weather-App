@@ -5,20 +5,51 @@ let search =document.querySelector('.search');
 let close = document.querySelector('.closeBtn');
 let container = document.querySelector('.container');
 let weather = document.querySelector('.weather');
-let chosenTown = document.querySelector('.chosen-city')
+let chosenTown = document.querySelector('.chosen-city');
+let currentInd = document.querySelector('.current_indicators');
+let err404 = document.querySelector('.not-found');
+let close404 = document.querySelector('.close-404')
 
 
 
 btn.addEventListener('click', () => {
- if(city.value.length === 0) {
+    const town = city.value;
+ if(town === "") {
     modal.style.display = 'block';
     search.style.display = 'none';
 
  } else {
-    chosenTown.textContent = city.value;
+    
 
-    container.style.height = '600px';
-    weather.style.display = 'flex';
+
+    const APIKey = "e7f10e7dd8bcdd8f7846a47464174d9b";
+    
+    fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${APIKey}&units=metric`
+    )
+    .then((response) => response.json())
+    .then((json) => {
+        if(json.cod === '404') {
+
+
+            //container.style.height = '300px';
+            err404.style.display = 'flex';
+            console.log('jopa')
+        } else {
+            container.style.height = '600px';
+            weather.style.display = 'flex';
+        }
+    })
+
+
+
+
+   
+    
+
+    chosenTown.textContent = town;
+
+
 
 
  }
@@ -29,4 +60,9 @@ btn.addEventListener('click', () => {
 close.addEventListener('click', () => {
     search.style.display = 'block';
     modal.style.display = 'none';
+})
+
+close404.addEventListener('click', () => {
+    err404.style.display = 'none';
+   // container.style.height = '100px';
 })
