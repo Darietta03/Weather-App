@@ -56,6 +56,7 @@ body {
                 margin: 0 10px;
                 border-radius: 10px;
                 padding: 5px;
+                text-transform: capitalize;
     
                 &:focus {
                     box-shadow: 0 0 10px #72867e;
@@ -86,24 +87,26 @@ body {
 
     .not-found {
         display: none;
-        align-items: center;
-        justify-content: center;
         flex-direction: column;
-        height: 250%;
-        width: 102%;
+        align-items: center;
+        height: 250px;
+        width: 400px;
         position: absolute;
-        top: -5px;
+        top: -50px;
         left: 50%;
         transform: translateX(-50%); 
         z-index: 99; 
         background-color: #fff;
         border-radius: 20px;
         padding: 5px;
-    
+        border: 1px solid  #106753;
+
+
+
         .modal-item{
-            display: flex;
-            justify-content: end; 
-    
+            display: inline-block;
+            margin-left: auto;
+
             .material-symbols-outlined {
                 text-align: center;
                 color: #72867e;
@@ -112,7 +115,6 @@ body {
                 margin-right: 0;
                 margin-left: auto;
                 
-    
                 &:hover {
                     color: #232725;
                 }
@@ -120,39 +122,38 @@ body {
         }
 
             .modal-img {
-                
-
                 img {
-                    width: 30px;
-                    height: 30px; 
+                    width: 200px;
+                    height: 150px; 
                 }
             }
-
-
+        
+            .modal-text {
+                p {
+                    text-align: center;
+                    font-family: 'Cabin', sans-serif;
+                    font-size: 20px;
+                    font-weight: 700;
+                    color:  #106753;
+                }
+            }  
         }
         
-        p {
-            text-align: center;
-            font-family: 'Cabin', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color:  #106753;
-        }
-    }
+
+   
 
 
 
     .weather {
+       
         width: 100%;
         height: 100%;
-        display: flex;
+        display: none;
         flex-direction: column;
         position: relative;
-        opacity: 0;
-        visibility: hidden;
 
         .chosen-city {
-            display: block;
+            
             text-align: center;
             font-family: 'Cabin', sans-serif;
             font-size: 40px;
@@ -164,8 +165,6 @@ body {
         .current_weather {
             margin-bottom: 20px;
         }
-
-
 
         .current_indicators {
             margin-top: 20px;
@@ -241,6 +240,7 @@ body {
             }
         }
     }
+
 }
 
 

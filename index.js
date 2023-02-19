@@ -14,6 +14,7 @@ let close404 = document.querySelector('.close-404')
 
 btn.addEventListener('click', () => {
     const town = city.value;
+    console.log(town);
  if(town === "") {
     modal.style.display = 'block';
     search.style.display = 'none';
@@ -30,14 +31,14 @@ btn.addEventListener('click', () => {
     .then((response) => response.json())
     .then((json) => {
         if(json.cod === '404') {
-
-
-            //container.style.height = '300px';
             err404.style.display = 'flex';
-            console.log('jopa')
-        } else {
+        } 
+        
+        else {
             container.style.height = '600px';
             weather.style.display = 'flex';
+            chosenTown.innerHTML = town;
+
         }
     })
 
@@ -45,12 +46,6 @@ btn.addEventListener('click', () => {
 
 
    
-    
-
-    chosenTown.textContent = town;
-
-
-
 
  }
 
@@ -64,5 +59,5 @@ close.addEventListener('click', () => {
 
 close404.addEventListener('click', () => {
     err404.style.display = 'none';
-   // container.style.height = '100px';
+  
 })
