@@ -16,8 +16,10 @@ btn.addEventListener('click', () => {
     const town = city.value;
     console.log(town);
  if(town === "") {
-    modal.style.display = 'block';
-    search.style.display = 'none';
+    //modal.style.display = 'block';
+    //search.style.display = 'none';
+    modal.style.opacity = '1';
+    modal.style.scale = '1';
 
  } else {
     
@@ -31,14 +33,62 @@ btn.addEventListener('click', () => {
     .then((response) => response.json())
     .then((json) => {
         if(json.cod === '404') {
-            err404.style.display = 'flex';
+            err404.style.opacity = '1';
+            err404.style.scale = '1';
+            return;
         } 
         
         else {
+            console.log(json);
             container.style.height = '600px';
-            weather.style.display = 'flex';
+            weather.style.opacity = '1';
+            weather.style.scale = '1';
             chosenTown.innerHTML = town;
 
+            const image = document.querySelector('.current_weather img');
+            const temperature = document.querySelector('.temperature');
+            const description = document.querySelector('.description');
+
+            const humidity = document.querySelector('.humidity-param span');
+            const wind = document.querySelector('.wind-param span');
+            const pressure = document.querySelector('.pressure-param span');
+            const visibility = document.querySelector('.visibility-param span');
+
+            switch(json.weather[0].main) {
+                case "Clear":
+                    image.src = "./icons/images/clear.png";
+                    break;
+                case "Clouds":
+                    image.src = "./icons/images/cloud.png";
+                    break;
+                case "Haze":
+                    image.src = "./icons/images/haze.png";
+                    break;
+                case "Mist":
+                    image.src = "./icons/images/mist.png";
+                    break;
+                case "Rain":
+                    image.src = "./icons/images/rain.png";
+                    break;
+                case "Smoke":
+                    image.src = "./icons/images/smoke.png";
+                    break;
+                case "Snow":
+                    image.src = "./icons/images/snow.png";
+                    break;
+                default:
+                    image.src = "";
+            }
+
+            temperature.innerHTML = `${parseInt(json.main.temp)} <span>°C</span>`;
+            description.innerHTML = `${json.weather[0].description}`;
+
+            humidity.innerHTML = `${json.main.humidity}%`;
+            wind.innerHTML = `${parseInt(json.wind.speed)}km/h`;
+            pressure.innerHTML = `${json.main.pressure}mb`;
+            visibility.innerHTML = `${parseInt(json.visibility/1000)}km`;
+
+            return;
         }
     })
 
@@ -52,12 +102,13 @@ btn.addEventListener('click', () => {
  city.value = "";
 })
 
-close.addEventListener('click', () => {
+/* close.addEventListener('click', () => {
     search.style.display = 'block';
     modal.style.display = 'none';
-})
+}) */
 
-close404.addEventListener('click', () => {
-    err404.style.display = 'none';
-  
+close404.addEventListener('click', (event) => {
+    console.log(this);
+    console.log(event.target);
+
 })

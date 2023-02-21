@@ -69,7 +69,7 @@ body {
   cursor: pointer;
 }
 .container .not-found {
-  display: none;
+  display: flex;
   flex-direction: column;
   align-items: center;
   height: 250px;
@@ -83,6 +83,9 @@ body {
   border-radius: 20px;
   padding: 5px;
   border: 1px solid #106753;
+  transition: all 1s ease;
+  scale: 0;
+  opacity: 0;
 }
 .container .not-found .modal-item {
   display: inline-block;
@@ -113,9 +116,12 @@ body {
 .container .weather {
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
   flex-direction: column;
   position: relative;
+  scale: 0;
+  opacity: 0;
+  transition: all 5s ease;
 }
 .container .weather .chosen-city {
   text-align: center;
@@ -124,9 +130,31 @@ body {
   font-weight: 700;
   color: #106753;
   text-transform: capitalize;
+  margin-bottom: 20px;
 }
 .container .weather .current_weather {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .weather .current_weather img {
+  width: 40%;
+  margin-bottom: 20px;
+}
+.container .weather .current_weather .temperature {
+  font-family: "Cabin", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #106753;
+}
+.container .weather .current_weather .description {
+  font-family: "Cabin", sans-serif;
+  font-size: 20px;
+  color: #106753;
+  font-weight: 700;
+  text-transform: capitalize;
 }
 .container .weather .current_indicators {
   margin-top: 20px;
@@ -153,25 +181,32 @@ body {
   margin-right: 5px;
 }
 .container .modal {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  width: 400px;
   position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
+  top: -50px;
   left: 50%;
-  width: 60%;
-  height: 90%;
-  background-color: #f9edb7;
-  border-radius: 10px;
-  padding: 8px;
-  border: 1px solid #72867e;
+  transform: translateX(-50%);
+  z-index: 99;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 5px;
+  border: 1px solid #106753;
+  transition: all 1s ease;
+  scale: 0;
+  opacity: 0;
 }
 .container .modal .modal-item {
-  display: flex;
-  justify-content: end;
+  display: inline-block;
+  margin-left: auto;
 }
 .container .modal .modal-item .material-symbols-outlined {
+  text-align: center;
   color: #72867e;
-  font-size: 15px;
+  font-size: 20px;
   cursor: pointer;
   margin-right: 0;
   margin-left: auto;
@@ -179,14 +214,14 @@ body {
 .container .modal .modal-item .material-symbols-outlined:hover {
   color: #232725;
 }
-.container .modal .errorMessage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+.container .modal .modal-img img {
+  width: 200px;
+  height: 150px;
 }
-.container .modal .errorMessage p {
+.container .modal .modal-text p {
+  text-align: center;
   font-family: "Cabin", sans-serif;
   font-size: 20px;
-  color: #72867e;
+  font-weight: 700;
+  color: #106753;
 }/*# sourceMappingURL=style.css.map */

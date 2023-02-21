@@ -43,14 +43,18 @@
 
         <div class="weather">
             <div class="chosen-city"></div>
-            <div class="current_weather"></div>
+            <div class="current_weather">
+                <img src="" alt="">
+                <p class="temperature"></p>
+                <p class="description"></p>
+            </div>
             <div class="current_indicators">
                 <div class="humidity indicator">
                     <div class="weather-icon"><span class="material-symbols-outlined">
                         humidity_percentage
                         </span></div>
                     <div class="weather-params">
-                        <div class="humidity-param param">74%</div>
+                        <div class="humidity-param param"><span></span></div>
                         <p>Humidity</p>
                     </div>
                 </div>
@@ -59,7 +63,7 @@
                         wind_power
                         </span></div>
                     <div class="weather-params">
-                        <div class="wind-param param ">11 km/h</div>
+                        <div class="wind-param param "><span></span></div>
                         <p>Wind power</p>
                     </div>
                 </div>
@@ -68,7 +72,7 @@
                         compress
                         </span></div>
                     <div class="weather-params">
-                        <div class="pressure-param param">74 mb</div>
+                        <div class="pressure-param param"><span></span></div>
                         <p>Pressure</p>
                     </div>
                 </div>
@@ -77,7 +81,7 @@
                         visibility
                         </span></div>
                     <div class="weather-params">
-                        <div class="visibility-param param">74 km</div>
+                        <div class="visibility-param param"><span></span></div>
                         <p>Visibility</p>
                     </div>
                 </div>
@@ -86,10 +90,13 @@
 
         <div class="modal">
             <div class="modal-item">
-                <span class="material-symbols-outlined closeBtn">close</span>
+                <span class="material-symbols-outlined close-404">close</span>
             </div>
-            <div class="errorMessage">
-                <p>Please, enter your city!</p>
+            <div class="modal-img">
+                <img src="./icons/images/question-mark-1019993_960_720.jpg" alt="Invalid location"> 
+            </div>
+            <div class="modal-text">
+                <p>Please, choose the city!</p>
             </div>
         </div>
 
