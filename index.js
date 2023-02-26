@@ -8,7 +8,8 @@ let weather = document.querySelector('.weather');
 let chosenTown = document.querySelector('.chosen-city');
 let currentInd = document.querySelector('.current_indicators');
 let err404 = document.querySelector('.not-found');
-let close404 = document.querySelector('.close-404')
+let defunctCity = document.querySelector('.defunct-city-btn');
+
 
 
 
@@ -16,15 +17,12 @@ btn.addEventListener('click', () => {
     const town = city.value;
     console.log(town);
  if(town === "") {
-    //modal.style.display = 'block';
-    //search.style.display = 'none';
+
     modal.style.opacity = '1';
     modal.style.scale = '1';
 
  } else {
     
-
-
     const APIKey = "e7f10e7dd8bcdd8f7846a47464174d9b";
     
     fetch(
@@ -40,9 +38,11 @@ btn.addEventListener('click', () => {
         
         else {
             console.log(json);
-            container.style.height = '600px';
+           
+            container.classList.add("big");
             weather.style.opacity = '1';
             weather.style.scale = '1';
+            weather.style.display = 'flex';
             chosenTown.innerHTML = town;
 
             const image = document.querySelector('.current_weather img');
@@ -87,28 +87,22 @@ btn.addEventListener('click', () => {
             wind.innerHTML = `${parseInt(json.wind.speed)}km/h`;
             pressure.innerHTML = `${json.main.pressure}mb`;
             visibility.innerHTML = `${parseInt(json.visibility/1000)}km`;
-
             return;
         }
     })
-
-
-
-
-   
-
  }
 
  city.value = "";
 })
 
-/* close.addEventListener('click', () => {
-    search.style.display = 'block';
-    modal.style.display = 'none';
-}) */
+err404.addEventListener('click', () => {
+    err404.style.opacity = '0';
+    err404.style.scale = '0';
 
-close404.addEventListener('click', (event) => {
-    console.log(this);
-    console.log(event.target);
+})
+
+defunctCity.addEventListener('click', () => {
+    modal.style.opacity = '0';
+    modal.style.scale = '0';
 
 })
