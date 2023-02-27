@@ -9,21 +9,20 @@
 body {
   height: 100vh;
   background: linear-gradient(140deg, #a3fff1, #FFCCAC, #f9edb7, #75f0de);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   height: 100px;
   width: 30%;
   min-width: 250px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
   background-color: #fff;
   border: 2px solid #72867e;
   border-radius: 20px;
   transition: height 2s ease;
-  padding: 0px 30px;
+  padding: 20px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,8 +33,9 @@ body {
   }
 }
 .container .search {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
+  align-self: center;
 }
 .container .search form {
   display: flex;
@@ -96,7 +96,6 @@ body {
   height: 250px;
   width: 400px;
   position: absolute;
-  top: -50px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 99;
@@ -137,12 +136,16 @@ body {
 .container .weather {
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
   flex-direction: column;
-  position: relative;
+  position: absolute;
   justify-content: space-around;
   scale: 0;
   opacity: 0;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transition: all 2s ease;
 }
 .container .weather .chosen-city {
   text-align: center;
@@ -208,7 +211,6 @@ body {
   height: 250px;
   width: 400px;
   position: absolute;
-  top: -50px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 99;
@@ -251,7 +253,4 @@ body {
   height: 600px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 20px;
 }/*# sourceMappingURL=style.css.map */

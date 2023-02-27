@@ -17,7 +17,7 @@ btn.addEventListener('click', () => {
     const town = city.value;
     console.log(town);
  if(town === "") {
-
+    city.setAttribute("disabled", "");
     modal.style.opacity = '1';
     modal.style.scale = '1';
 
@@ -31,6 +31,7 @@ btn.addEventListener('click', () => {
     .then((response) => response.json())
     .then((json) => {
         if(json.cod === '404') {
+            city.setAttribute("disabled", "");
             err404.style.opacity = '1';
             err404.style.scale = '1';
             return;
@@ -42,7 +43,7 @@ btn.addEventListener('click', () => {
             container.classList.add("big");
             weather.style.opacity = '1';
             weather.style.scale = '1';
-            weather.style.display = 'flex';
+            weather.style.position = 'relative';
             chosenTown.innerHTML = town;
 
             const image = document.querySelector('.current_weather img');
@@ -96,12 +97,14 @@ btn.addEventListener('click', () => {
 })
 
 err404.addEventListener('click', () => {
+    city.removeAttribute("disabled");
     err404.style.opacity = '0';
     err404.style.scale = '0';
 
 })
 
 defunctCity.addEventListener('click', () => {
+    city.removeAttribute("disabled");
     modal.style.opacity = '0';
     modal.style.scale = '0';
 
