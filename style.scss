@@ -22,7 +22,7 @@ body {
 
 .container {
     height: 100px;
-    width: 30%;
+    width: 35%;
     min-width: 250px;
 
     background-color: #fff;
@@ -37,7 +37,9 @@ body {
 
  
 
-
+    @media (max-width: 991px) {
+        height: 80px;   
+    }
 
     @media (max-width: 819px) {
         height: 70px;   
@@ -45,7 +47,7 @@ body {
 
     
     .search {
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
         align-self: center;
        
@@ -58,7 +60,7 @@ body {
     
             .searchField {
                 font-family: 'Cabin', sans-serif;
-                font-size: 25px;
+                font-size: 30px;
                 color:  #72867e;
                 outline: none;
                 border: none;
@@ -76,8 +78,14 @@ body {
                 }
 
                 @media (max-width: 991px) {
+                    font-size: 17px;
+                }
+
+                @media (max-width: 767px) {
                     font-size: 15px;
                 }
+
+
                 
             }
     
@@ -103,6 +111,10 @@ body {
                 }
 
                 @media (max-width: 991px) {
+                    font-size: 17px;
+                }
+
+                @media (max-width: 767px) {
                     font-size: 15px;
                 }
             }
@@ -258,8 +270,6 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 250px;
-        width: 400px;
         position: absolute;
         left: 50%;
         transform: translateX(-50%); 
@@ -271,7 +281,11 @@ body {
         transition: all 1s ease;
         scale: 0;
         opacity: 0;
+        width: 28%;
 
+        @media (max-width: 575px) {
+            width: 50%;
+        }
 
 
         .modal-item{
@@ -290,14 +304,25 @@ body {
                     color: #232725;
                 }
             }
+
         }
 
             .modal-img {
-                img {
-                    width: 200px;
-                    height: 150px; 
+                height: 200px;
+                width: 70%;
+                background-image:url('../icons/images/question-mark-1019993_960_720.jpg');
+                background-size: contain;
+                background-repeat: no-repeat;
                 }
-            }
+
+                @media (max-width: 819px) {
+                    height: 180px;   
+                }
+
+                @media (max-width: 575px) {
+                    height: 150px;
+                }
+            
         
             .modal-text {
                 p {
@@ -306,7 +331,20 @@ body {
                     font-size: 20px;
                     font-weight: 700;
                     color:  #106753;
+
+                    @media (max-width: 819px) {
+                        font-size: 15px; 
+                        font-weight: 600;  
+                    }
+
+                    @media (max-width: 575px) {
+                        font-size: 12px; 
+                        font-weight: 500;  
+                    }
+    
+
                 }
+            
             }  
     }
 
@@ -316,7 +354,6 @@ body {
     height: 600px;
     display: flex;
     flex-direction: column;
-
 }
 
 

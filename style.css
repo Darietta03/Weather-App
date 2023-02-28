@@ -16,7 +16,7 @@ body {
 
 .container {
   height: 100px;
-  width: 30%;
+  width: 35%;
   min-width: 250px;
   background-color: #fff;
   border: 2px solid #72867e;
@@ -27,13 +27,18 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 991px) {
+  .container {
+    height: 80px;
+  }
+}
 @media (max-width: 819px) {
   .container {
     height: 70px;
   }
 }
 .container .search {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   align-self: center;
 }
@@ -44,7 +49,7 @@ body {
 }
 .container .search form .searchField {
   font-family: "Cabin", sans-serif;
-  font-size: 25px;
+  font-size: 30px;
   color: #72867e;
   outline: none;
   border: none;
@@ -62,6 +67,11 @@ body {
   }
 }
 @media (max-width: 991px) {
+  .container .search form .searchField {
+    font-size: 17px;
+  }
+}
+@media (max-width: 767px) {
   .container .search form .searchField {
     font-size: 15px;
   }
@@ -85,6 +95,11 @@ body {
   }
 }
 @media (max-width: 991px) {
+  .container .search form .material-symbols-outlined {
+    font-size: 17px;
+  }
+}
+@media (max-width: 767px) {
   .container .search form .material-symbols-outlined {
     font-size: 15px;
   }
@@ -208,8 +223,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 250px;
-  width: 400px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -221,6 +234,12 @@ body {
   transition: all 1s ease;
   scale: 0;
   opacity: 0;
+  width: 28%;
+}
+@media (max-width: 575px) {
+  .container .modal {
+    width: 50%;
+  }
 }
 .container .modal .modal-item {
   display: inline-block;
@@ -237,9 +256,22 @@ body {
 .container .modal .modal-item .material-symbols-outlined:hover {
   color: #232725;
 }
-.container .modal .modal-img img {
-  width: 200px;
-  height: 150px;
+.container .modal .modal-img {
+  height: 200px;
+  width: 70%;
+  background-image: url("../icons/images/question-mark-1019993_960_720.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media (max-width: 819px) {
+  .container .modal {
+    height: 180px;
+  }
+}
+@media (max-width: 575px) {
+  .container .modal {
+    height: 150px;
+  }
 }
 .container .modal .modal-text p {
   text-align: center;
@@ -247,6 +279,18 @@ body {
   font-size: 20px;
   font-weight: 700;
   color: #106753;
+}
+@media (max-width: 819px) {
+  .container .modal .modal-text p {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 575px) {
+  .container .modal .modal-text p {
+    font-size: 12px;
+    font-weight: 500;
+  }
 }
 
 .big {
